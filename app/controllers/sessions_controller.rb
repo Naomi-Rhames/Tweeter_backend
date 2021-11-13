@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
        end
     end
 
-    def current_user
-        render json: {user: UserSerializer.new()}
+    def autologin
+        render json: {user: UserSerializer.new(fetch_user), token: encode_token(fetch_user.id) }
     end
 
 end
