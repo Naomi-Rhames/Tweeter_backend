@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_11_08_182519) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
+    t.integer "tweet_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_11_08_182519) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
