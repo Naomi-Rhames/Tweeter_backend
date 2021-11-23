@@ -8,6 +8,10 @@ class ApplicationController < ActionController::API
         User.find(decoded_fetch_user_token["user_id"])
     end
 
+    def logged_in
+        User.find(decoded_token["user_id"])
+    end
+
     private
 
     def fetch_user_token
