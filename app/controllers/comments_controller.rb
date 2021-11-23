@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
 
     def create
-        byebug
-     comment = logged_in.comments.create!(comment_params)
-     render :json comment
+     
+     user = fetch_user.id
+    #  byebug
+     comment = Comment.create(description: comment_params[:description], tweet_id: comment_params[:tweet_id].to_i, user_id: user)
+    #  byebug
+    #  comment = logged_in.comments.create!(comment_params)
+     render json: comment
     end
 
 
