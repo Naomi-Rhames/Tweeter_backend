@@ -3,14 +3,14 @@ class SessionsController < ApplicationController
     def login 
         user = User.find_by_username(params[:username])
        if user && user.authenticate(params[:password])
-         render json: {user: UserSerializer.new(user), token: encode_token(user.id)}
+         render_user_token(user)
        else
         render json: {eroors: "Invalid Credentials!" }, status: :forbidden
        end
     end
 
     def autologin
-        render json: {user: UserSerializer.new(fetch_user), token: encode_token(fetch_user.id) }
+        render_user_token(fetch_user)
     end
 
 end
