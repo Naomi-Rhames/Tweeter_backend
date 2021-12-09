@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
     end
     
     def create
+        # byebug
        if tweet = Tweet.new(tweet_params)
          tweet.save
             render json: tweet
@@ -14,9 +15,16 @@ class TweetsController < ApplicationController
         end
     end
 
+    
+
     def show
         tweet = Tweet.find(params[:id])
         render json: tweet, serializer: TweetSerializer
+    end
+
+    def delete
+    
+
     end
 
     private

@@ -9,6 +9,15 @@ class UsersController < ApplicationController
      end
     end
 
+    def show
+      user = User.find(params[:id])
+      if user === fetch_user
+        render json: user
+      else
+        render json: {error: user.errors.full_messages}
+      end
+    end
+
 
     private 
 
