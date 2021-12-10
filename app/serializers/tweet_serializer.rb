@@ -1,10 +1,7 @@
 class TweetSerializer < ActiveModel::Serializer
-attributes :id, :description, :image_url, :comments, :username
+attributes :id, :description, :image_url
+has_many :comments
 
 
-
-def username
-    self.object.user.username
-end
-
+   
 end 

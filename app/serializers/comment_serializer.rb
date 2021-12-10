@@ -1,4 +1,4 @@
-class TweetSerializer < ActiveModel::Serializer
+class CommentSerializer < ActiveModel::Serializer
     attributes :id, :description, :username
 
     def username
