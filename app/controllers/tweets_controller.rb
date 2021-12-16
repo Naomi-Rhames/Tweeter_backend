@@ -6,7 +6,6 @@ class TweetsController < ApplicationController
     end
     
     def search
-        byebug
         tweet = Tweet.where(description: params[:description]).first
         render json: tweet
     end
