@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :tweets, only:[:create, :index, :show] do 
     resources :comments, only: [:create]
   end
+  get '/search', to: "tweet#search"
   get '/profile', to: "user#show"
   get "/tweeter", to: "sessions#autologin"
   post "/sessions", to: "sessions#login"
