@@ -5,7 +5,7 @@ class UsersController < ApplicationController
      if user.save
       render_user_token(user)
      else
-        render json: {error: user.errors.full_messages},  status: :unprocessable_entity
+        render json: {error: user.errors.full_messages},  status: 403
      end
     end
 
