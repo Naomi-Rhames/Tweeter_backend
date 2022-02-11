@@ -4,4 +4,6 @@ class CommentSerializer < ActiveModel::Serializer
     def username
         self.object.user.username
     end
+
+   
 end

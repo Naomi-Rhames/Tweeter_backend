@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
          tweet.save
             render json: tweet
         else
-            render json: {error: tweet.errors.full_messages},  status: :unprocessable_entity
+            render json: {error: tweet.errors.full_messages},  status: 403
         end
     end
 
